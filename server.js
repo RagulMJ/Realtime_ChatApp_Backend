@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 app.use('/users', userRoutes);
 
 const server = require('http').createServer(app);
-const port = 5001 || process.env.PORT;
+const port = process.env.PORT || 5001;
 const io = require('socket.io')(server, {
   cors: {
     origin: process.env.HOST,
