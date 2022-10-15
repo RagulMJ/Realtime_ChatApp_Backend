@@ -13,7 +13,7 @@ app.use(cors());
 
 require('./connection');
 app.get('/', (req, res) => {
-  res.json('Web server running');
+  res.send('Web server running');
 });
 app.use('/users', userRoutes);
 
