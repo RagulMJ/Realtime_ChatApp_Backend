@@ -18,7 +18,7 @@ app.get('/', (req, res) => {
 app.use('/users', userRoutes);
 
 const server = require('http').createServer(app);
-const PORT = 5001 || process.env.PORT;
+const port = 5001 || process.env.PORT;
 const io = require('socket.io')(server, {
   cors: {
     origin: process.env.HOST,
@@ -98,6 +98,6 @@ app.get('/rooms', (req, res) => {
   res.json(rooms);
 });
 
-server.listen(PORT, () => {
-  console.log('listening to port', PORT);
+server.listen(port, () => {
+  console.log(`listening to port : ${port}`);
 });
