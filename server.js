@@ -12,6 +12,9 @@ app.use(express.json());
 app.use(cors());
 
 require('./connection');
+app.get('/', (req, res) => {
+  res.json('Web server running');
+});
 app.use('/users', userRoutes);
 
 const server = require('http').createServer(app);
